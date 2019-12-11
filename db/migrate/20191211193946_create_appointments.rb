@@ -1,7 +1,7 @@
 class CreateAppointments < ActiveRecord::Migration[6.0]
   def change
     create_table :appointments do |t|
-      t.references :user, null: false, foreign_key: true
+      
       t.references :lead, null: false, foreign_key: true
       t.string :title
       t.date :date
