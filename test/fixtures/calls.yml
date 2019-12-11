@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  lead: one
+  call_status: MyString
+  appointment_made?: false
+  archive_lead?: false
+
+two:
+  user: two
+  lead: two
+  call_status: MyString
+  appointment_made?: false
+  archive_lead?: false

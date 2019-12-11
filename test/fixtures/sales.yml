@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  lead: one
+  annualized_life_premium: 1.5
+
+two:
+  user: two
+  lead: two
+  annualized_life_premium: 1.5
