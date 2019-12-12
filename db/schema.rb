@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 2019_12_11_194431) do
     t.datetime "end_time"
     t.boolean "presentation_made?", default: false
     t.boolean "made_sale?", default: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lead_id"], name: "index_appointments_on_lead_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "calls", force: :cascade do |t|
@@ -30,9 +32,11 @@ ActiveRecord::Schema.define(version: 2019_12_11_194431) do
     t.string "call_status"
     t.boolean "appointment_made?", default: false
     t.boolean "archive_lead?", default: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lead_id"], name: "index_calls_on_lead_id"
+    t.index ["user_id"], name: "index_calls_on_user_id"
   end
 
   create_table "leads", force: :cascade do |t|
@@ -60,9 +64,11 @@ ActiveRecord::Schema.define(version: 2019_12_11_194431) do
   create_table "sales", force: :cascade do |t|
     t.integer "lead_id", null: false
     t.float "annualized_life_premium", default: 0.0
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lead_id"], name: "index_sales_on_lead_id"
+    t.index ["user_id"], name: "index_sales_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,7 +82,10 @@ ActiveRecord::Schema.define(version: 2019_12_11_194431) do
   end
 
   add_foreign_key "appointments", "leads"
+  add_foreign_key "appointments", "users"
   add_foreign_key "calls", "leads"
+  add_foreign_key "calls", "users"
   add_foreign_key "leads", "users"
   add_foreign_key "sales", "leads"
+  add_foreign_key "sales", "users"
 end

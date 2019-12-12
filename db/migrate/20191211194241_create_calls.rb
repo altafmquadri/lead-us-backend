@@ -5,6 +5,7 @@ class CreateCalls < ActiveRecord::Migration[6.0]
       t.string :call_status
       t.boolean :appointment_made?, default: false
       t.boolean :archive_lead?, default: false
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

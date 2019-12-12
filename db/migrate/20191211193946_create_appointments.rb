@@ -8,6 +8,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.datetime :end_time
       t.boolean :presentation_made?, default: false
       t.boolean :made_sale?, default: false
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

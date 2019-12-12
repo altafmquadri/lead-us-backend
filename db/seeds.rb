@@ -103,6 +103,7 @@ Lead.create ({
 
 
 Appointment.create({
+    user_id: 1,
     lead_id: 3,
     title: "Meeting at Starbucks",
     date: "15/12/19",
@@ -112,6 +113,7 @@ Appointment.create({
 })
 
 Appointment.create({
+    user_id: 1,
     lead_id: 1,
     title: "Meeting at Home Depot",
     date: "18/12/19",
@@ -121,21 +123,25 @@ Appointment.create({
 })
 
 Call.create({
+    user_id: 1,
     lead_id: 4,
     call_status: "left message"
 })
 
 Call.create({
+    user_id: 1,
     lead_id: 5,
     call_status: "left message"
 })
 
 Sale.create({
+    user_id: 1,
     lead_id: 6,
     annualized_life_premium: 800.00
 })
 
 Sale.create({
+    user_id: 1,
     lead_id: 7,
     annualized_life_premium: 1200.00
 })
