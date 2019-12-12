@@ -11,67 +11,67 @@ User.create(first_name: "Altaf", last_name: "Quadri", company_name: "some sales 
 
 Lead.create ({
     user_id: 1,
-    first_name: "Nasr",
-    last_name: "Quadri",
+    first_name: "Nas",
+    last_name: "Qua",
     street: "25 Broadway",
     city: "New York",
     state: "NY",
     postal_code: "10004",
     phone_number: "212-786-7978",
-    beneficiary_information: "Nishad Chaudry",
-    date_of_birth: "07/08/1985"
+    beneficiary_information: "Nish Chay",
+    date_of_birth: "17/08/1985"
 })
 
 Lead.create ({
     user_id: 1,
-    first_name: "Salman",
-    last_name: "Quadri",
+    first_name: "Sal",
+    last_name: "Fadri",
     street: "30 Broadway",
     city: "New York",
     state: "NY",
     postal_code: "10004",
     phone_number: "212-271-7978",
-    beneficiary_information: "Ahlam Aitboul",
-    date_of_birth: "04/11/1987"
+    beneficiary_information: "Ahlamis Ait",
+    date_of_birth: "04/12/1993"
 })
 
 Lead.create ({
     user_id: 1,
-    first_name: "Mustafa",
-    last_name: "Khan",
+    first_name: "Mus",
+    last_name: "Phan",
     street: "45 Broadway",
     city: "New York",
     state: "NY",
     postal_code: "10008",
     phone_number: "212-271-7978",
-    beneficiary_information: "Samiha Aitboul",
-    date_of_birth: "30/12/1985"
+    beneficiary_information: "Ami Aitboul",
+    date_of_birth: "30/05/1985"
 })
 
 Lead.create ({
     user_id: 1,
-    first_name: "Ahlam",
+    first_name: "Ami",
     last_name: "Aitboul",
     street: "100 Broadway",
     city: "New York",
     state: "NY",
     postal_code: "10008",
     phone_number: "212-271-7978",
-    beneficiary_information: "Salman Quadri",
-    date_of_birth: "29/06/1985"
+    beneficiary_information: "Sal Fadri",
+    date_of_birth: "14/06/1985"
 })
 
 
 Lead.create ({
     user_id: 1,
-    first_name: "Samiha",
-    last_name: "Aitboul",
+    first_name: "Pamiha",
+    last_name: "Aitb",
     street: "100 Broadway",
     city: "New York",
     state: "NY",
     postal_code: "10008",
     phone_number: "212-271-7978",
-    beneficiary_information: "Mustafa Khan",
+    beneficiary_information: "Mus San",
     date_of_birth: "15/07/1985"
 })
 
@@ -84,7 +84,7 @@ Lead.create ({
     state: "NY",
     postal_code: "10008",
     phone_number: "212-871-7978",
-    beneficiary_information: "Mishal Khan",
+    beneficiary_information: "Mishal Jna",
     date_of_birth: "16/08/1985"
 })
 
