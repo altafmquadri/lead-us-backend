@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        user = User.find(params[:user_id])
+        user = User.find(params[:user_id]
         user.leads.create(lead_params)
         render json: user.leads.last
     end

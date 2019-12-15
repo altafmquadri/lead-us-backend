@@ -130,10 +130,27 @@ Call.create({
 
 Call.create({
     user_id: 1,
+    lead_id: 4,
+    call_status: "no answer"
+})
+
+Call.create({
+    user_id: 1,
     lead_id: 5,
     call_status: "left message"
 })
 
+Call.create({
+    user_id: 1,
+    lead_id: 5,
+    call_status: "left message"
+})
+
+Call.create({
+    user_id: 1,
+    lead_id: 5,
+    call_status: "left message"
+})
 Sale.create({
     user_id: 1,
     lead_id: 6,
