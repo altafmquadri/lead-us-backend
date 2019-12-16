@@ -12,4 +12,3 @@ class Api::V1::LeadsController < ApplicationController
 end
 
 
-# user.leads.find{|lead| lead.id == 7}.calls.create!(user_id:user.id, call_status: "no answer") will need this for calls creation
