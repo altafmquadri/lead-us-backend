@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create]
       resources :leads, only: [:create]
       resources :calls, only: [:create]
+      resources :appointments, only: [:create]
     end
   end
 end
