@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_194431) do
+ActiveRecord::Schema.define(version: 2019_12_17_194625) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "lead_id", null: false
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2019_12_11_194431) do
     t.decimal "longitude", precision: 10, scale: 6, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "password_digest"
   end
 
   add_foreign_key "appointments", "leads"
