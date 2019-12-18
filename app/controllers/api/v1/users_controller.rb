@@ -9,7 +9,8 @@ class Api::V1::UsersController < ApplicationController
         user = User.new(user_params)
         
         if user.save
-            render json: {user: user}, include: [:leads, :calls, :appointments, :sales]
+            # render json: {user: user}, include: [:leads, :calls, :appointments, :sales]
+            render json: user, include: [:leads, :calls, :appointments, :sales]
         else
             render json: {errors: user.errors.full_messages}
         end
