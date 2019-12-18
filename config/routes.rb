@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :leads, only: [:create]
       resources :calls, only: [:create, :update]
       resources :appointments, only: [:create]
+
+      post "/login", to: "auth#login"
     end
   end
 end
