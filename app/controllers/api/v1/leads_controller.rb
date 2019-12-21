@@ -17,7 +17,9 @@ class Api::V1::LeadsController < ApplicationController
         response = Net::HTTP.get(uri)
 
         response = JSON.parse(response)
-        i=response.map{|location| location["display_name"].split.slice(-2)}.index("#{params[:postal_code]},")
+        # guard against incorrect/unknown zip
+        i = i == nil ? 0 : response.map{|location| location["display_name"].split.slice(-2)}.index("#{params[:postal_code]},")
+
         response[i][vector]
     end
 
@@ -25,8 +27,8 @@ class Api::V1::LeadsController < ApplicationController
         user = User.find(params[:user_id])
 
         user.leads.new(lead_params)
-        user.leads.last.update!(latitude: fetch_vector(lead_params, 'lat')) # not sure how to guard against a fake address
-        user.leads.last.update!(longitude: fetch_vector(lead_params, 'lon')) # not sure how to guard against a fake address
+        user.leads.last.update!(latitude: fetch_vector(lead_params, 'lat')) 
+        user.leads.last.update!(longitude: fetch_vector(lead_params, 'lon')) 
         user.leads.last.save
         render json: user.leads.last
         
