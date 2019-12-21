@@ -25,11 +25,11 @@ class Api::V1::LeadsController < ApplicationController
         user = User.find(params[:user_id])
 
         user.leads.new(lead_params)
-        user.leads.last.update(latitude: fetch_vector(lead_params, 'lat'))
-        user.leads.last.update(longitude: fetch_vector(lead_params, 'lon'))
+        user.leads.last.update!(latitude: fetch_vector(lead_params, 'lat')) # not sure how to guard against a fake address
+        user.leads.last.update!(longitude: fetch_vector(lead_params, 'lon')) # not sure how to guard against a fake address
         user.leads.last.save
-
         render json: user.leads.last
+        
     end
 
     private
