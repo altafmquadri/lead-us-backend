@@ -17,7 +17,8 @@ class Api::V1::LeadsController < ApplicationController
         response = Net::HTTP.get(uri)
 
         response = JSON.parse(response)
-        response[0][vector]
+        i=response.map{|location| location["display_name"].split.slice(-2)}.index("#{params[:postal_code]},")
+        response[i][vector]
     end
 
     def create
