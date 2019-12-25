@@ -31,12 +31,19 @@ class Api::V1::LeadsController < ApplicationController
         user.leads.last.update!(longitude: fetch_vector(lead_params, 'lon')) 
         user.leads.last.save
         render json: user.leads.last
-        
+    end
+
+    def update
+        lead = Lead.find(params[:id])
+        lead.update(lead_archived?: lead_params[:lead_archived?])
+
+        render json: lead
+
     end
 
     private
     def lead_params
-        params.permit(:user_id, :first_name, :last_name, :street, :city, :state, :postal_code, :phone_number, :beneficiary_information, :date_of_birth)
+        params.permit(:user_id, :first_name, :last_name, :street, :city, :state, :postal_code, :phone_number, :beneficiary_information, :date_of_birth, :lead_archived?)
     end
 end
 
