@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :leads, only: [:create, :update]
       resources :calls, only: [:create, :update]
       resources :appointments, only: [:create, :update]
+      resources :sales, only:[:create]
 
       post "/login", to: "auth#login"
       get "/auto_login", to: "auth#auto_login"

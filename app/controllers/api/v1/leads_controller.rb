@@ -35,7 +35,7 @@ class Api::V1::LeadsController < ApplicationController
 
     def update
         lead = Lead.find(params[:id])
-        lead.update(lead_archived?: lead_params[:lead_archived?])
+        lead.update(lead_archived?: lead_params[:lead_archived?], sale_made?: lead_params[:sale_made?])
 
         render json: lead
 
@@ -43,7 +43,7 @@ class Api::V1::LeadsController < ApplicationController
 
     private
     def lead_params
-        params.permit(:user_id, :first_name, :last_name, :street, :city, :state, :postal_code, :phone_number, :beneficiary_information, :date_of_birth, :lead_archived?)
+        params.permit(:user_id, :first_name, :last_name, :street, :city, :state, :postal_code, :phone_number, :beneficiary_information, :date_of_birth, :lead_archived?, :sale_made?)
     end
 end
 
