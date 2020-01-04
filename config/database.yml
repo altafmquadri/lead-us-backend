@@ -20,6 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+#changing production for use in heroku
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
+
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: lead-us_production
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000 
